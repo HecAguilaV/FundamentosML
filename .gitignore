@@ -14,3 +14,7 @@ __pycache__/
 # Gentleman Guardian Angel Cache & Config
 .gga.cache/
 best_model.joblib
+AGENTS.md
+
+# Directorios
+/openspec/
