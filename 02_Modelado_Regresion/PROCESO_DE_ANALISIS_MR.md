@@ -37,12 +37,14 @@ Para comparar la precisión y generalización de los modelos, se calcularon las 
 | **Regresión Ridge** | 1.0000 | 1.0000 | 0.0001 | 0.0001 | Excelente (Ajuste Perfecto) |
 | **Árbol de Decisión** | 1.0000 | 0.9412 | 2.5120 | 3.1245 | Sobreajuste leve (Típico de árboles) |
 
-### 2.3. Análisis Crítico del Ajuste Perfecto ($R^2 = 1.0000$) y Target Leakage
-Obtener un error de cero absoluto ($MAE = 0.00$) en datos de rendimiento humano real es una alerta crítica de *Target Leakage* (fuga de datos del futuro). Para auditar este fenómeno, se ejecutó un lazo iterativo de CRISP-DM:
-1. **Auditoría:** Se identificaron las variables de resultado de partida (`win_probability` y `mvp_award`) como posibles filtradoras del target.
-2. **Prueba:** Se reentrenaron los modelos excluyendo estas variables sospechosas.
+### 2.3. Análisis Crítico del Ajuste Perfecto ($R^2 = 1.0000$) y Segunda Iteración
+Obtener un error de cero absoluto ($MAE = 0.00$ y $R^2 = 1.0000$) en datos de rendimiento humano es una anomalía estadística severa. Un factor clave que despertó sospechas fue que, durante la fase de depuración y limpieza de outliers (tanto por el filtro biológico de 120 ms como por el método IQR), **solo se eliminaron 8 registros en total**, entrenando con el 98.4% del dataset original. 
+
+Con casi todo el dataset intacto y sin ruido típico de la conducta humana, un ajuste perfecto indicaba una de dos opciones: *Target Leakage* (fuga de información) o un dataset sintético determinista. Esto motivó una segunda iteración de CRISP-DM para auditar el flujo:
+1. **Auditoría:** Se identificaron las variables de resultado de partida (`win_probability` y `mvp_award`) como posibles variables filtradoras del target.
+2. **Prueba:** Se reentrenaron los modelos excluyendo estas variables del conjunto de entrenamiento.
 3. **Resultado:** Los modelos lineales (Regresión Lineal y Ridge) **siguieron obteniendo un $R^2 = 1.0000$ perfecto**.
-4. **Conclusión Científica:** Esto demuestra que el dataset es **100% sintético y determinista**. El target `performance_score` es el resultado directo de una ecuación lineal matemática exacta (sin término de error aleatorio $\epsilon$). Los algoritmos lineales descubren esta fórmula exacta, mientras que el Árbol de Decisión obtiene un $R^2$ menor debido a que aproxima una función lineal continua mediante escalones discretos.
+4. **Conclusión Científica:** Se demostró matemáticamente que el dataset es **100% sintético y determinista lineal**. La variable objetivo `performance_score` se calcula mediante una combinación lineal exacta de los atributos del jugador sin un término de error aleatorio ($\epsilon = 0$). Los algoritmos lineales descubren esta fórmula exacta, mientras que el Árbol de Decisión obtiene un $R^2$ menor debido a que aproxima una función continua mediante escalones.
 
 **Decisión del Mejor Modelo:** Se seleccionó **Regresión Lineal** (o Ridge con regularización despreciable) por su capacidad de reproducir de manera exacta la función generadora de datos con costo computacional mínimo.
 
