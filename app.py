@@ -46,7 +46,7 @@ st.markdown("""
             color: #FF4B4B;
         }
     </style>
-""", unsafe_warnings=True)
+""", unsafe_allow_html=True)
 
 # Título de la Aplicación
 st.title("🎮 eSports Player Performance Predictor")
