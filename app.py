@@ -136,3 +136,11 @@ else:
             """,
             unsafe_allow_html=True
         )
+
+        st.info(
+            "💡 **Interpretación del Modelo:** El rendimiento estimado depende de forma estrictamente "
+            "lineal de las estadísticas directas del jugador (kills, assists, deaths, precisión, fatiga y "
+            "tiempo de reacción). Las variables contextuales como el equipo, mapa o fase del torneo no "
+            "aportan peso a la ecuación, confirmando que en este dataset el rendimiento es puramente "
+            "individual e independiente del entorno."
+        )
