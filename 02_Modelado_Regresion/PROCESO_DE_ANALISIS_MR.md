@@ -31,11 +31,11 @@ Para comparar la precisión y generalización de los modelos, se calcularon las 
 
 ### 2.2. Resultados y Comparación de Modelos
 
-| Modelo | $R^2$ (Train) | $R^2$ (Test) | MAE (Test) | RMSE (Test) | Generalización |
-| :--- | :---: | :---: | :---: | :---: | :---: |
-| **Regresión Lineal** | 1.0000 | 1.0000 | 0.0000 | 0.0000 | Excelente (Ajuste Perfecto) |
-| **Regresión Ridge** | 1.0000 | 1.0000 | 0.0001 | 0.0001 | Excelente (Ajuste Perfecto) |
-| **Árbol de Decisión** | 1.0000 | 0.9412 | 2.5120 | 3.1245 | Sobreajuste leve (Típico de árboles) |
+| Modelo                | $R^2$ (Train) | $R^2$ (Test) | MAE (Test) | RMSE (Test) |            Generalización            |
+| :-------------------- | :-----------: | :----------: | :--------: | :---------: | :----------------------------------: |
+| **Regresión Lineal**  |    1.0000     |    1.0000    |   0.0000   |   0.0000    |     Excelente (Ajuste Perfecto)      |
+| **Regresión Ridge**   |    1.0000     |    1.0000    |   0.0001   |   0.0001    |     Excelente (Ajuste Perfecto)      |
+| **Árbol de Decisión** |    1.0000     |    0.9412    |   2.5120   |   3.1245    | Sobreajuste leve (Típico de árboles) |
 
 ### 2.3. Análisis Crítico del Ajuste Perfecto ($R^2 = 1.0000$) y Segunda Iteración
 Obtener un error de cero absoluto ($MAE = 0.00$ y $R^2 = 1.0000$) en datos de rendimiento humano es una anomalía estadística severa. Un factor clave que despertó sospechas fue que, durante la fase de depuración y limpieza de outliers (tanto por el filtro biológico de 120 ms como por el método IQR), **solo se eliminaron 8 registros en total**, entrenando con el 98.4% del dataset original. 
