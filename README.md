@@ -8,10 +8,10 @@ Este repositorio contiene los proyectos prácticos desarrollados para la asignat
 
 El ciclo del proyecto está dividido en etapas modulares correspondientes a las fases de la metodología CRISP-DM:
 
-| Etapa | Proceso Desarrollado | Descripción | Enlace al Detalle |
-| :--- | :--- | :--- | :--- |
-| **01** | **EDA eSports** | Comprensión del Negocio, Comprensión de los Datos y Preparación de Datos. Limpieza neurofisiológica y filtros biológicos. | [📁 README 01_EDA_Esports](file:///home/hector/Escritorio/FundamentosML/01_EDA_Esports/README.md) |
-| **02** | **Modelado de Regresión** | Entrenamiento de modelos lineales y basados en árboles, evaluación de generalización y despliegue interactivo con Streamlit. | [📁 README 02_Modelado_Regresion](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/README.md) |
+| Etapa | Proceso Desarrollado | Descripción | Enlace al Detalle | Informe Técnico / Bitácora |
+| :--- | :--- | :--- | :--- | :--- |
+| **01** | **EDA eSports** | Comprensión del Negocio, Comprensión de los Datos y Preparación de Datos. Limpieza neurofisiológica y filtros biológicos. | [📁 README 01_EDA_Esports](file:///home/hector/Escritorio/FundamentosML/01_EDA_Esports/README.md) | [📄 PROCESO_DE_ANALISIS_EDA.md](file:///home/hector/Escritorio/FundamentosML/01_EDA_Esports/PROCESO_DE_ANALISIS_EDA.md) |
+| **02** | **Modelado de Regresión** | Entrenamiento de modelos lineales y basados en árboles, evaluación de generalización y despliegue interactivo con Streamlit. | [📁 README 02_Modelado_Regresion](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/README.md) | [📄 PROCESO_DE_ANALISIS_MR.md](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/PROCESO_DE_ANALISIS_MR.md) |
 
 ---
 

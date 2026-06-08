@@ -12,7 +12,7 @@ El análisis exploratorio tiene como objetivo comprender la estructura del datas
 
 * **[`HectorAguila_Ev02_001D_EDA_eSports.ipynb`](file:///home/hector/Escritorio/FundamentosML/01_EDA_Esports/HectorAguila_Ev02_001D_EDA_eSports.ipynb):** Jupyter Notebook con el desarrollo completo del análisis exploratorio, visualizaciones y preprocesamiento inicial.
 * **[`esports_player_performance_tournament_analytics.csv`](file:///home/hector/Escritorio/FundamentosML/01_EDA_Esports/01_EDA_Esports/esports_player_performance_tournament_analytics.csv):** Dataset original sin depurar provisto para el análisis.
-* **[`PROCESO_DE_ANALISIS.md`](file:///home/hector/Escritorio/FundamentosML/01_EDA_Esports/PROCESO_DE_ANALISIS.md):** Bitácora técnica con las decisiones de diseño tomadas durante el EDA.
+* **[`PROCESO_DE_ANALISIS_EDA.md`](file:///home/hector/Escritorio/FundamentosML/01_EDA_Esports/PROCESO_DE_ANALISIS_EDA.md):** Bitácora técnica con las decisiones de diseño tomadas durante el EDA.
 
 ---
 

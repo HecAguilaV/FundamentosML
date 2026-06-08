@@ -15,7 +15,7 @@ El objetivo de esta fase es implementar un modelo de regresión robusto capaz de
   2. Modelamiento y entrenamiento de algoritmos (**Regresión Lineal**, **Regresión Ridge** y **Árbol de Decisión**).
   3. Evaluación matemática del rendimiento en entrenamiento y prueba.
   4. Formulario interactivo integrado usando `ipywidgets`.
-* **[`INFORME_TECNICO.md`](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/INFORME_TECNICO.md):** Reporte técnico formal que detalla el modelado, la justificación de algoritmos y el análisis del ajuste perfecto ($R^2 = 1.0000$).
+* **[`PROCESO_DE_ANALISIS_MR.md`](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/PROCESO_DE_ANALISIS_MR.md):** Bitácora técnica y reporte formal de modelado, justificación de algoritmos y análisis del ajuste perfecto ($R^2 = 1.0000$).
 * **[`app.py`](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/app.py):** Aplicación interactiva construida en **Streamlit** que expone una interfaz gráfica para predecir en tiempo real fuera del entorno de Jupyter.
 * **[`esports_player_performance_clean.csv`](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/esports_player_performance_clean.csv):** Dataset depurado después de la limpieza de outliers (filtro neurofisiológico e IQR) y transformaciones.
 * **[`best_model.joblib`](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/best_model.joblib):** Pipeline del mejor modelo entrenado serializado en disco (incluye el preprocesador `StandardScaler` y el regresor lineal final).
