@@ -12,15 +12,28 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Estilos CSS personalizados para un diseño elegante (modo oscuro y tarjetas con HSL)
+# Estilos CSS personalizados para un diseño elegante (navy blue con degradado diagonal)
 st.markdown("""
     <style>
-        .main {
-            background-color: #0e1117;
+        .stApp {
+            background: linear-gradient(135deg, #070B19 0%, #0F1C3F 60%, #1E3A70 100%);
             color: #ffffff;
         }
+        .main {
+            background: transparent;
+        }
+        /* Ajuste de inputs y selectors para combinar con el fondo */
+        div[data-baseweb="select"] > div {
+            background-color: #122146 !important;
+            color: white !important;
+            border: 1px solid #1E3A70 !important;
+        }
+        input {
+            background-color: #122146 !important;
+            color: white !important;
+        }
         .stButton>button {
-            background: linear-gradient(45deg, #FF4B4B, #FF8F8F);
+            background: linear-gradient(135deg, #3B82F6, #1D4ED8);
             color: white;
             border-radius: 8px;
             border: none;
@@ -28,22 +41,27 @@ st.markdown("""
             font-weight: bold;
             font-size: 16px;
             transition: all 0.3s ease;
+            box-shadow: 0 4px 10px rgba(29, 78, 216, 0.3);
         }
         .stButton>button:hover {
             transform: scale(1.05);
-            box-shadow: 0 4px 15px rgba(255, 75, 75, 0.4);
+            box-shadow: 0 6px 20px rgba(59, 130, 246, 0.6);
+            background: linear-gradient(135deg, #60A5FA, #2563EB);
         }
         .prediction-card {
-            background-color: #1a1c24;
+            background-color: #122146;
             padding: 24px;
             border-radius: 12px;
-            border-left: 5px solid #FF4B4B;
+            border: 1px solid #2563EB;
+            border-left: 6px solid #60A5FA;
             margin-top: 20px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
         }
         .metric-value {
-            font-size: 36px;
+            font-size: 40px;
             font-weight: bold;
-            color: #FF4B4B;
+            color: #60A5FA;
+            text-shadow: 0 0 10px rgba(96, 165, 250, 0.3);
         }
     </style>
 """, unsafe_allow_html=True)
