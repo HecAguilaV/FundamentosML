@@ -56,3 +56,11 @@ Para dar valor práctico al modelo desarrollado y permitir simulaciones interact
 
 * **Despliegue Interno (Jupyter):** Un formulario dinámico construido en el notebook mediante `ipywidgets` que permite cambiar parámetros de juego y observar la predicción del modelo de forma instantánea.
 * **Despliegue Externo (Web App):** Una aplicación independiente en **Streamlit** ([`app.py`](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/app.py)) que carga el pipeline serializado en [`best_model.joblib`](file:///home/hector/Escritorio/FundamentosML/02_Modelado_Regresion/best_model.joblib). Esta interfaz limpia y amigable permite simular escenarios de rendimiento de jugadores competitivos en tiempo real fuera de cualquier entorno de código.
+
+---
+
+## 4. Declaración de Uso de IA Generativa
+
+De acuerdo con las buenas prácticas de honestidad académica y uso responsable de tecnologías:
+* **Uso de Herramientas:** Se declara el uso de asistentes de IA generativa como soporte para el refinamiento de la documentación técnica (Markdown), optimización estética de las visualizaciones y asistencia en el desarrollo de la interfaz interactiva en Streamlit.
+* **Validación Humana:** Toda decisión de diseño arquitectónico, análisis de métricas ($R^2$, MAE, RMSE), depuración de outliers (método IQR y filtro biológico) y justificación de selección de modelos (Regresión Lineal por Parsimonia) fue auditada, validada y liderada en su totalidad por el autor del trabajo.
