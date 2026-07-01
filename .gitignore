@@ -9,6 +9,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 .DS_Store
+.*
 
 # Jupyter Notebook Checkpoints
 .ipynb_checkpoints/
@@ -18,6 +19,7 @@ requirements.txt
 .gga.cache/
 AGENTS.md
 .gga
+app.py
 
 # Directorios
 openspec/

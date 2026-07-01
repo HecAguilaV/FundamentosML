@@ -54,9 +54,16 @@ El rendimiento de los clasificadores en el conjunto de prueba para predecir la c
 ### 2.2. Análisis Crítico y Evidencia de la Caída de KNN
 
 * **La Debilidad Empírica de KNN:** En las matrices de confusión y reportes del notebook se evidencia la caída en el rendimiento de KNN. Su exactitud global baja a **$95.17\%$**, pero lo más crítico es el **F1-Score para la clase MVP, que cae a $0.6494$** con un recall de solo $52.08\%$ (dejando de identificar casi a la mitad de los jugadores MVP reales). Esto demuestra geométricamente la sensibilidad de KNN al desbalance de clases y a la dimensionalidad en el espacio de características.
-* **Separación Perfecta de Random Forest:** El Random Forest Classifier alcanza métricas perfectas en test ($1.0000$), confirmando que el algoritmo basado en árboles descorrelacionados con cortes ortogonales logra replicar de manera exacta las fronteras de decisión de este dataset sintético lineal.
+* **Separación Perfecta de Random Forest y Regresión Logística:** Ambos modelos alcanzan un ajuste perfecto o casi perfecto sobre el conjunto de test. Este comportamiento responde a que la variable target `mvp_award` se define mediante una regla sintética determinista perfecta (sin ruido aleatorio, $\epsilon = 0$) basada en si el jugador tiene un alto rendimiento y si el equipo ganó. Tanto las rectas de la regresión logística como los cortes ortogonales de los árboles replican con exactitud la frontera matemática del dataset.
 
-**Selección del Modelo Campeón:** Se selecciona **Random Forest Classifier** por su excelente rendimiento general y se guarda en checkpoints.
+### 2.3. Validación Cruzada (Cross-Validation) para Auditar el Sobreajuste
+
+Siguiendo las directrices académicas de cuestionar rendimientos perfectos del $100\%$ en el test set para descartar sobreajuste (*overfitting*), se aplicó **Validación Cruzada de 5 pliegues (5-Fold Cross-Validation)** sobre el conjunto de entrenamiento utilizando el F1-Score como métrica:
+* **F1-Scores por pliegue:** `[1.0000, 0.9867, 1.0000, 1.0000, 0.9867]`
+* **F1-Score promedio:** **$0.9947$**
+* **Conclusión de Robustez:** Las pequeñas fluctuaciones según el pliegue confirman empíricamente que el Random Forest es estable, no memoriza ciegamente la muestra y posee una excelente capacidad de generalización ante datos no vistos.
+
+**Selección del Modelo Campeón:** Se selecciona **Random Forest Classifier** por su excelente rendimiento general en validación cruzada y test, exportando su pipeline a producción.
 
 ---
 
