@@ -8,17 +8,19 @@ Este directorio contiene el desarrollo de las etapas finales de la metodología 
 
 El objetivo de esta fase es implementar un modelo de regresión robusto capaz de predecir el Score de Rendimiento (performance_score) basado en estadísticas físicas y de partida del jugador.
 
-### Estructura de esta Etapa
+### Rol de los Archivos en este Directorio
 
-* [HectorAguila_Ev03_Regresion_eSports.ipynb](HectorAguila_Ev03_Regresion_eSports.ipynb): Jupyter Notebook con el flujo completo de:
-  1. Replicación del preprocesamiento y limpieza definidos en el EDA.
-  2. Modelamiento y entrenamiento de algoritmos (Regresión Lineal, Regresión Ridge y Árbol de Decisión).
-  3. Evaluación matemática del rendimiento en entrenamiento y prueba.
-  4. Formulario interactivo integrado usando `ipywidgets`.
-* [PROCESO_DE_ANALISIS_MR.md](PROCESO_DE_ANALISIS_MR.md): Bitácora técnica y reporte formal de modelado, justificación de algoritmos y análisis del ajuste perfecto (R^2 = 1.0000).
-* [app.py](app.py): Aplicación interactiva construida en Streamlit que expone una interfaz gráfica para predecir en tiempo real fuera del entorno de Jupyter.
-* [esports_player_performance_clean.csv](esports_player_performance_clean.csv): Dataset depurado después de la limpieza de outliers (filtro neurofisiológico e IQR) y transformaciones.
-* [best_model.joblib](best_model.joblib): Pipeline del mejor modelo entrenado serializado en disco (incluye el preprocesador `StandardScaler` y el regresor lineal final).
+*   **[HectorAguila_Ev03_Regresion_eSports.ipynb](HectorAguila_Ev03_Regresion_eSports.ipynb):** Jupyter Notebook con el flujo completo de modelado de regresión, incluyendo el entrenamiento de regresiones lineales (MCO, Ridge) y no lineales (Árboles de Decisión), cálculo de métricas de generalización (R², MAE, MSE, RMSE) e interfaz interactiva embebida con ipywidgets.
+*   **[PROCESO_DE_ANALISIS_MR.md](PROCESO_DE_ANALISIS_MR.md):** Reporte técnico formal en Markdown que detalla el entrenamiento de los 3 modelos, la interpretación del ajuste perfecto (R² = 1.0000) por el carácter sintético del dataset y la justificación del modelo campeón.
+*   **[PROCESO_DE_ANALISIS_MR.pdf](PROCESO_DE_ANALISIS_MR.pdf):** Copia en PDF del reporte técnico de regresión, optimizada para descarga directa y evaluación formal de la asignatura.
+*   **[app.py](app.py):** Código de la interfaz interactiva web construida con Streamlit para realizar predicciones del Score de Rendimiento de forma visual y fuera del entorno de desarrollo.
+*   **[run_streamlit.sh](run_streamlit.sh):** Script bash ejecutable que levanta la aplicación web de Streamlit resolviendo las rutas y el entorno virtual correspondiente de forma automática.
+*   **[best_model.joblib](best_model.joblib):** Pipeline del modelo campeón de regresión (Regresión Lineal) serializado para producción (incluye el escalador de variables y el estimador ajustado).
+*   **[esports_player_performance_clean.csv](esports_player_performance_clean.csv):** Dataset limpio y depurado tras los filtros del EDA, utilizado directamente como entrada para los modelos de regresión.
+*   **[Learning_MR.md](Learning_MR.md):** Guía conceptual de estudio personal que reúne fórmulas de regularización Ridge/Lasso, análisis de sobreajuste y métricas de error. *(Nota: Archivo local personal, ignorado en Git).*
+*   **[Learning_MR_Aterrizado.md](Learning_MR_Aterrizado.md):** Bitácora complementaria de estudio personal con un enfoque pragmático para preparar la defensa oral. *(Nota: Archivo local personal, ignorado en Git).*
+*   **[Instrucciones/](Instrucciones/):** Directorio local que contiene las pautas y rúbricas correspondientes a la Parcial 3 de la universidad. *(Nota: Directorio local, ignorado en Git).*
+*   **[receipt-*.txt](receipt-2026_1_PM_FMY0100_24489350_PCT-Evaluacio%CC%81n%20Parcial%203%20Modelos%20de%20Regresio%CC%81n%2025.txt):** Comprobante oficial de recepción de la entrega en el portal digital de la universidad. *(Nota: Archivo local, ignorado en Git).*
 
 ---
 

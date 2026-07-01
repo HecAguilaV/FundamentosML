@@ -8,19 +8,16 @@ Este directorio contiene el desarrollo de las etapas finales de clasificación d
 
 El objetivo de esta fase es implementar un modelo de clasificación robusto capaz de predecir si un jugador de eSports será galardonado como MVP (`Yes` = 1, `No` = 0) al finalizar una partida, basándose en sus métricas físicas y estadísticas competitivas de rendimiento individual.
 
-### Estructura de esta Etapa
+### Rol de los Archivos en este Directorio
 
-*   **[HectorAguila_Ev04_Clasificacion_eSports.ipynb](HectorAguila_Ev04_Clasificacion_eSports.ipynb):** Jupyter Notebook con el flujo experimental CRISP-DM completo:
-    1.  Limpieza de datos (filtro de reacción humana de 120 ms y outliers lentos por IQR).
-    2.  División temprana train/test ($80\% / 20\%$) para mitigar Data Leakage de manera rigurosa.
-    3.  Preprocesamiento de datos aislado (StandardScaler + OneHotEncoder) dentro de Pipelines.
-    4.  Entrenamiento y comparación de 3 clasificadores (Regresión Logística, KNN y Random Forest Classifier).
-    5.  Evaluación cuantitativa mediante matrices de confusión, curvas ROC y curvas Precision-Recall (PR).
-*   **[PROCESO_DE_ANALISIS_MC.md](PROCESO_DE_ANALISIS_MC.md):** Reporte técnico académico formal que detalla el modelado, los resultados reales del test set, la justificación de la debilidad de KNN y la Declaración de IA.
-*   **[app.py](app.py):** Aplicación interactiva construida en Streamlit para la inferencia del MVP en tiempo real mediante sliders e inputs configurables.
-*   **[run_streamlit.sh](run_streamlit.sh):** Script bash wrapper para levantar automáticamente la app de Streamlit de forma aislada y resolver la carga del entorno virtual de forma inteligente.
+*   **[HectorAguila_Ev04_Clasificacion_eSports.ipynb](HectorAguila_Ev04_Clasificacion_eSports.ipynb):** Jupyter Notebook con el flujo experimental CRISP-DM de clasificación (filtros IQR/neurofisiológico, split train/test aislado, pipelines y evaluación de Regresión Logística, KNN y Random Forest Classifier con curvas ROC/PR).
+*   **[PROCESO_DE_ANALISIS_MC.md](PROCESO_DE_ANALISIS_MC.md):** Reporte técnico formal en Markdown que documenta la justificación del cambio de target a `mvp_award`, el análisis de métricas y la Declaración de IA.
+*   **[PROCESO_DE_ANALISIS_MC.pdf](PROCESO_DE_ANALISIS_MC.pdf):** Copia en PDF del reporte técnico de clasificación, optimizada para descarga directa y lectura externa del docente.
+*   **[app.py](app.py):** Código de la interfaz interactiva web construida con Streamlit para la simulación predictiva de obtención del premio MVP.
+*   **[run_streamlit.sh](run_streamlit.sh):** Script bash wrapper ejecutable para inicializar Streamlit resolviendo las variables de ruta y el entorno virtual del proyecto.
 *   **[checkpoints/best_model.joblib](checkpoints/best_model.joblib):** Pipeline del modelo campeón (Random Forest Classifier) serializado y exportado para producción.
-*   **[esports_player_performance_tournament_analytics.csv](esports_player_performance_tournament_analytics.csv):** Dataset original de eSports utilizado para la fase.
+*   **[esports_player_performance_tournament_analytics.csv](esports_player_performance_tournament_analytics.csv):** Dataset original bruto con las estadísticas competitivas históricas utilizadas para el modelado.
+*   **[Learning_MC.md](Learning_MC.md):** Guía conceptual de estudio personal sobre clasificación (maldición de la dimensionalidad en KNN, media armónica de F1-Score y curvas ROC vs. PR). *(Nota: Archivo local personal, ignorado en Git).*
 
 ---
 
