@@ -1,0 +1,45 @@
+# Virtual Environment
+.venv/
+venv/
+ENV/
+
+# Python Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
+.*
+!.gitignore
+
+# Jupyter Notebook Checkpoints
+.ipynb_checkpoints/
+requirements.txt
+
+# Gentleman Guardian Angel Cache & Config
+.gga.cache/
+AGENTS.md
+.gga
+app.py
+
+# Directorios
+openspec/
+Unidad3/
+02_Modelado_Regresion/Instrucciones/
+Unidad4/
+
+
+# Instrucciones y Evaluaciones
+01_EDA_Esports/*Evaluacio*.pdf
+03_Modelos_Clasificacion/receipt-*.txt
+
+# Materiales de Estudio (Ignorados)
+01_EDA_Esports/Learning_EDA.md
+02_Modelado_Regresion/Learning_MR.md
+02_Modelado_Regresion/receipt-*.txt
+Unidad4/Instrucciones
+Unidad4/Unidad4.md
+01_EDA_Esports/Learning_EDA.md
+03_Modelos_Clasificacion/Learning_MC.md
+03_Modelos_Clasificacion/Learning.md
+02_Modelado_Regresion/Learning_MR_Aterrizado.md
+02_Modelado_Regresion/Learning_MR.md
